@@ -1,0 +1,62 @@
+.container {
+  background-color: #495E57;
+  min-height: 406px;
+}
+
+.inner {
+  display: flex;
+  max-width: 60%;
+  margin: 0 auto;
+  justify-content: space-between;
+  position: relative;
+  padding: 28px;
+}
+
+.inner > img {
+  position: absolute;
+  right: 0;
+  width: 375px;
+  height: 435px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+.inner > div{
+  max-width: 40%;
+}
+.inner > div > h1 {
+  margin: 0;
+  color: #F4CE14;
+  font-family: "Markazi Text", serif;
+  font-weight: 500;
+  font-size: 64px;
+}
+
+.inner > div > h3{
+  margin: 0;
+  color: white;
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  margin-top: -25px;
+}
+.inner > div > p{
+  margin: 0;
+  max-width: 72%;
+  margin-top: 40px;
+  color: white;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.inner > div > button {
+  margin-top: 40px;
+  background-color: #F4CE14;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  width: 210px;
+  height: 60px;
+  font-family: "Karla", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+}
