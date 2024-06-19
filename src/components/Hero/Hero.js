@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import restauranfood from "../../assets/images/restauranfood.jpg";
 import "./Hero.css";
 
@@ -12,7 +13,7 @@ export default function Hero() {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <button>Reserve a Table</button>
+          <button><Link to={"/reservations"}>Reserve a Table</Link></button>
         </div>
         <img src={restauranfood} alt="restauranfood_img" />
       </div>

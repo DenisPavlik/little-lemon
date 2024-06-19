@@ -1,0 +1,43 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 30%;
+  margin: 0 auto;
+}
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  /* border: 1px solid red; */
+}
+.formSection {
+  /* border: 1px solid red; */
+  background-color: #495E57;
+  min-height: 70vh;
+  padding-top: 6rem;
+}
+form > div > label {
+  text-transform: uppercase;
+  color: #F4CE14;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 2px;
+}
+form > div > input,
+form > div > select {
+  padding: 0.75rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+form > input {
+  background-color: #F4CE14;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: black;
+  font-family: "Karla", sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  cursor: pointer;
+}
