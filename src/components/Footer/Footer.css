@@ -1,0 +1,46 @@
+footer {
+  background-color: #d9d9d9;
+}
+footer img {
+  width: 162px;
+  height: 280px;
+}
+.footer {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  padding: 50px 0 30px 0;
+  gap: 80px;
+}
+.footer > div {
+  display: flex;
+  margin-top:30px;
+  width: 100%;
+}
+.footer > div > div {
+  flex-basis: 33%;
+  font-family: "Karla", sans-serif;
+}
+.footer > div > div > span {
+  display: block;
+  color: #495E57;
+  font-size: 20px;
+  font-weight: 900;
+  min-height: 46px;
+}
+.footer > div > div > ul  {
+  margin: 0;
+  padding: 0;
+}
+.footer > div > div > ul > li {
+  margin: 0;
+  list-style: none;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 2px 0;
+  color: #333333;
+}
+.footer > div > div > ul > li > a {
+  color: #333333;
+  text-decoration: none;
+}

@@ -1,0 +1,63 @@
+.testimonials {
+  background-color: #d9d9d9;
+}
+.testimonials > .inner {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.testimonials > .inner > h1 {
+  margin: 120px 0 80px 0;
+  text-align: center;
+  font-family: "Markazi Text", serif;
+  font-weight: 500;
+  font-size: 36px;
+  color: #333333;
+}
+.testimonials > .inner > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 100%;
+  max-height: 175px;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.testimonials > .inner > div > div {
+  background-color: #ffffff;
+  min-width: 200px;
+  min-height: 175px;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+.testimonials > .inner > div > div > div {
+  display: flex;
+  gap: 8px;
+}
+.testimonials .raiting img {
+  width: 20px;
+}
+.testimonials .raiting {
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+.testimonials .bio {
+  margin: 20px 0;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+.testimonials .bio img {
+  width: 40px;
+}
+.testimonials > .inner > div > div > span {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}

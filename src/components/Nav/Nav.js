@@ -9,19 +9,19 @@ export default function Nav() {
           <Link aria-label="Home Page" to={'/'}>Home</Link>
         </li>
         <li>
-        <Link to={'/about'}>About</Link>
+        <Link to={'/'}>About</Link>
         </li>
         <li>
-          <Link to={'/menu'}>Menu</Link>
+          <Link to={'/'}>Menu</Link>
         </li>
         <li>
           <Link aria-label="Reserve Table" to={'/reservations'}>Reservations</Link>
         </li>
         <li>
-          <Link to={'/order-online'}>Order Online</Link>
+          <Link to={'/'}>Order Online</Link>
         </li>
         <li>
-          <Link to={'/login'}>Login</Link>
+          <Link to={'/'}>Login</Link>
         </li>
       </ul>
     </nav>

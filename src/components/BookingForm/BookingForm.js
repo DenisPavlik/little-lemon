@@ -125,6 +125,7 @@ export default function BookingForm(props) {
         <div>
           <label htmlFor="occasion">Occasion</label>
           <select
+            className="select_occasion"
             data-testid='occasion'
             id="occasion"
             value={occasion}
