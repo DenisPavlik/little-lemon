@@ -13,7 +13,7 @@ export default function Hero() {
             We are a family owned Mediterranean restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
-          <button><Link to={"/reservations"}>Reserve a Table</Link></button>
+          <button aria-label="Reserve Table"><Link to={"/reservations"}>Reserve a Table</Link></button>
         </div>
         <img src={restauranfood} alt="restauranfood_img" />
       </div>

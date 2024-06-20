@@ -6,7 +6,7 @@ export default function Nav() {
     <nav>
       <ul>
         <li>
-          <Link to={'/'}>Home</Link>
+          <Link aria-label="Home Page" to={'/'}>Home</Link>
         </li>
         <li>
         <Link to={'/about'}>About</Link>
@@ -15,7 +15,7 @@ export default function Nav() {
           <Link to={'/menu'}>Menu</Link>
         </li>
         <li>
-          <Link to={'/reservations'}>Reservations</Link>
+          <Link aria-label="Reserve Table" to={'/reservations'}>Reservations</Link>
         </li>
         <li>
           <Link to={'/order-online'}>Order Online</Link>

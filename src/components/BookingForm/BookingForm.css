@@ -41,3 +41,12 @@ form > input {
   font-size: 20px;
   cursor: pointer;
 }
+form > input:disabled {
+  cursor: not-allowed;
+  background-color: #d1c68f;
+  color: gray;
+}
+form > div > span {
+  color: coral;
+  font-weight: 500;
+}
