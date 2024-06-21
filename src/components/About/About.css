@@ -3,7 +3,6 @@
   margin: 0 auto;
   display: flex;
   margin-top: 100px;
-  display: flex;
   justify-content: space-between;
   margin-bottom: 100px;
 }
@@ -45,4 +44,33 @@
   position: absolute;
   right: 170px;
   top: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .about {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .about {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    flex-direction: column;
+  }
+  .about .info {
+    max-width: 95%;
+  }
+  .images {
+    display: flex;
+    justify-content: end;
+  }
+  .images .mens1 {
+    position: absolute;
+    right: 130px;
+    top: 100px;
+  }
 }

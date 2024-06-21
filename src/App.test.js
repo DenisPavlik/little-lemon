@@ -75,7 +75,15 @@ test("Validate guests", () => {
   const inputGuests = screen.getByTestId("guests");
   const button = screen.getByText("Make reservation");
 
-  expect(inputGuests).toBeInTheDocument();
+  fireEvent.change(inputGuests, { target: { value: "2" } });
+  fireEvent.blur(inputGuests);
+
+  const errMessage = screen.queryByText("Enter number of guests (1-10)");
+
+  expect(errMessage).toBeNull();
+
+  // expect(inputGuests).toBeInTheDocument();
+
   expect(button).toBeDisabled();
 });
 
@@ -86,7 +94,14 @@ test("Validate occasion", () => {
   const selectOccasion = screen.getByTestId("occasion");
   const button = screen.getByText("Make reservation");
 
-  expect(selectOccasion).toBeInTheDocument();
+  fireEvent.change(selectOccasion, { target: { value: "Birthday" } });
+  fireEvent.blur(selectOccasion);
+
+  const errMessage = screen.queryByText("Choose occasion");
+
+  expect(errMessage).toBeNull();
+
+  // expect(selectOccasion).toBeInTheDocument();
   expect(button).toBeDisabled();
 });
 
@@ -112,4 +127,32 @@ test("Validate Button", () => {
   });
 
   expect(button).not.toHaveAttribute("disabled", "true");
+});
+
+test("Validate fullname", () => {
+  const timesArr = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  render(<BookingForm availableTimes={timesArr} />);
+
+  const inputFullname = screen.getByTestId("fullname");
+  const button = screen.getByText("Make reservation");
+
+  fireEvent.blur(inputFullname);
+  const errMessage = screen.getByText("Enter your fullname, pleace");
+
+  expect(errMessage).toBeInTheDocument();
+  expect(button).toBeDisabled();
+});
+
+test("Validate contact", () => {
+  const timesArr = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  render(<BookingForm availableTimes={timesArr} />);
+
+  const inputContact = screen.getByTestId("contact");
+  const button = screen.getByText("Make reservation");
+
+  fireEvent.blur(inputContact);
+  const errMessage = screen.getByText("Enter your contact information, pleace");
+
+  expect(errMessage).toBeInTheDocument();
+  expect(button).toBeDisabled();
 });

@@ -65,3 +65,25 @@
   text-decoration: none;
   color: black;
 }
+
+
+
+@media screen and (max-width: 1200px) {
+  .inner {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .inner {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inner > img {
+    display: none;
+  }
+  .inner > div{
+    max-width: 95%;
+  }
+}

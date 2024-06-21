@@ -20,9 +20,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  min-width: 100%;
+  /* min-width: 100%; */
   max-height: 175px;
-  overflow: hidden;
   margin-bottom: 100px;
 }
 .testimonials > .inner > div > div {
@@ -60,4 +59,36 @@
   font-family: "Karla", sans-serif;
   font-weight: 400;
   font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+  .testimonials > .inner {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .testimonials > .inner {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .testimonials > .inner {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials > .inner > div {
+    min-width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+  }
+}
+@media screen and (max-width: 430px) {
+  .testimonials > .inner > div {
+    flex-direction: column;
+    max-height: 100%;
+  }
 }

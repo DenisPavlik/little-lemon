@@ -44,3 +44,28 @@ footer img {
   color: #333333;
   text-decoration: none;
 }
+
+
+@media screen and (max-width: 1200px) {
+  .footer {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .footer {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .footer {
+    gap: 20px;
+  }
+}

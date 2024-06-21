@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./BookingForm.css";
 
 export default function BookingForm(props) {
+  const [fullName, setFullName] = useState("");
+  const [contact, setContact] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState(props.availableTimes[0]);
   const [guests, setGuests] = useState("");
@@ -10,7 +12,13 @@ export default function BookingForm(props) {
   const [errorMessage, setErrorMessage] = useState({});
 
   useEffect(() => {
-    if (Object.keys(errorMessage).length === 0 && date !== '' && guests !== '') {
+    const condition =
+      Object.keys(errorMessage).length === 0 &&
+      date !== "" &&
+      guests !== "" &&
+      fullName !== "" &&
+      contact !== "";
+    if (condition) {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -64,6 +72,32 @@ export default function BookingForm(props) {
           return rest;
         });
       }
+    } else if (type === "fullname") {
+      if (fullName === "") {
+        setErrorMessage((errors) => ({
+          ...errors,
+          fullname: "Enter your fullname, pleace",
+        }));
+        setDisabled(true);
+      } else {
+        setErrorMessage((errors) => {
+          const { fullname, ...rest } = errors;
+          return rest;
+        });
+      }
+    } else if (type === "contact") {
+      if (contact === "") {
+        setErrorMessage((errors) => ({
+          ...errors,
+          contact: "Enter your contact information, pleace",
+        }));
+        setDisabled(true);
+      } else {
+        setErrorMessage((errors) => {
+          const { contact, ...rest } = errors;
+          return rest;
+        });
+      }
     }
   };
 
@@ -95,7 +129,7 @@ export default function BookingForm(props) {
         <div>
           <label htmlFor="res-time">Choose time</label>
           <select
-            data-testid='res-time'
+            data-testid="res-time"
             id="res-time"
             value={time}
             onChange={(e) => setTime(e.target.value)}
@@ -110,7 +144,7 @@ export default function BookingForm(props) {
         <div>
           <label htmlFor="guests">Number of guests</label>
           <input
-            data-testid='guests'
+            data-testid="guests"
             type="number"
             placeholder="1"
             min="1"
@@ -126,7 +160,7 @@ export default function BookingForm(props) {
           <label htmlFor="occasion">Occasion</label>
           <select
             className="select_occasion"
-            data-testid='occasion'
+            data-testid="occasion"
             id="occasion"
             value={occasion}
             onChange={(e) => setOccasion(e.target.value)}
@@ -136,6 +170,32 @@ export default function BookingForm(props) {
             <option>Anniversary</option>
           </select>
           {errorMessage.occasion && <span>{errorMessage.occasion}</span>}
+        </div>
+        <div>
+          <label htmlFor="fullname">Full Name</label>
+          <input
+            type="text"
+            data-testid="fullname"
+            id="fullname"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            onBlur={() => validate("fullname")}
+            placeholder="Full Name"
+          />
+          {errorMessage.fullname && <span>{errorMessage.fullname}</span>}
+        </div>
+        <div>
+          <label htmlFor="contact">Contact Info</label>
+          <input
+            type="text"
+            data-testid="contact"
+            id="contact"
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
+            onBlur={() => validate("contact")}
+            placeholder="Email of phone nubmer"
+          />
+          {errorMessage.contact && <span>{errorMessage.contact}</span>}
         </div>
         <input
           // onClick={(e) =>

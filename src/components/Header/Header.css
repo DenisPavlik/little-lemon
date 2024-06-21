@@ -9,3 +9,16 @@ header {
   justify-content: space-between;
   min-height: 120px;
 }
+
+@media screen and (max-width: 1200px) {
+  header {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  header {
+    max-width: 95%;
+  }
+}
+  

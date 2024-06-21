@@ -1,37 +1,46 @@
 import { useReducer } from "react";
 import BookingForm from "../BookingForm/BookingForm";
 import Header from "../Header/Header";
-import {fetchAPI, submitAPI} from '../../api/api'
+import { fetchAPI, submitAPI } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import NavMobile from "../Nav/mobile/NavMobile";
 
-export default function BookingPage() {
+export default function BookingPage({ openNav, setOpenNav }) {
   // const timesArr = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
   const navigate = useNavigate();
   const updateTimes = (times, action) => {
-    if (action.type === 'updateTimes') {
-      const date = new Date(action.date)
-      return fetchAPI(date)
+    if (action.type === "updateTimes") {
+      const date = new Date(action.date);
+      return fetchAPI(date);
     }
-    return times
-  }
+    return times;
+  };
   const initializeTimes = () => {
-    const date = new Date()
-    return fetchAPI(date) 
-  }
+    const date = new Date();
+    return fetchAPI(date);
+  };
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
   const submitForm = (e, data) => {
-    e.preventDefault()
+    e.preventDefault();
     const response = submitAPI(data);
     if (response) {
-      navigate("/booking-success")
+      navigate("/booking-success");
     }
-  }
-  
+  };
+
   return (
     <>
-      <Header />
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch} handleSubmit={submitForm} />
+      <Header setOpenNav={setOpenNav} />
+      {openNav ? (
+        <NavMobile setOpenNav={setOpenNav} />
+      ) : (
+        <BookingForm
+          availableTimes={availableTimes}
+          dispatch={dispatch}
+          handleSubmit={submitForm}
+        />
+      )}
     </>
   );
 }

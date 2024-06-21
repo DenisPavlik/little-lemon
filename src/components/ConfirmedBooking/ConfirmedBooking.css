@@ -1,8 +1,17 @@
 .confirmation {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   background-color: #495E57;
   color: white;
   min-height: 12rem;
+}
+.confirmation a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.confirmation a:hover {
+  text-decoration: dashed;
 }

@@ -96,3 +96,22 @@
 .highlights > .cards > div > div > button > img {
   width: 20px;
 }
+
+
+
+@media screen and (max-width: 1200px) {
+  .highlights {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .highlights {
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .highlights > .cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
